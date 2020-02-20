@@ -4,11 +4,18 @@ import (
 	"context"
 
 	"github.com/google/go-github/github"
+	"golang.org/x/oauth2"
 )
 
 func HandleGitInit() {
-	client := github.NewClient(nil)
+	ctx := context.Background()
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: "... your access token ..."},
+	)
+	tc := oauth2.NewClient(ctx, ts)
 
-	// list all organizations for user "willnorris"
-	orgs, _, err := client.Organizations.List(context.Background(), "karimcorp", nil)
+	client := github.NewClient(tc)
+
+	// list all repositories for the authenticated user
+	repos, _, err := client.Repositories.List(ctx, "", nil)
 }

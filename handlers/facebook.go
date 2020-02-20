@@ -12,8 +12,8 @@ import (
 
 var (
 	oauthConfFB = &oauth2.Config{
-		ClientID:     "473118993591190",
-		ClientSecret: "6ab435693de95b0902a42963d74b3c07",
+		ClientID:     "",
+		ClientSecret: "",
 		RedirectURL:  "http://localhost:8080/facebook/callback",
 		Scopes:       []string{"public_profile"},
 		Endpoint: oauth2.Endpoint{
