@@ -22,6 +22,7 @@ func main() {
 	http.HandleFunc("/facebook", handlers.HandleFacebookLogin)
 	http.HandleFunc("/facebook/callback", handlers.HandleFacebookCallback)
 	http.HandleFunc("/github", handlers.HandleGitLogin)
+	http.HandleFunc("/github/callback", handlers.HandleGitCallback)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 

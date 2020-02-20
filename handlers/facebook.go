@@ -21,19 +21,19 @@ var (
 			TokenURL: "https://graph.facebook.com/v5.0/oauth/access_token",
 		},
 	}
-	oauthStateStringFB = "thisshouldberandom"
+	oauthStateString = "thisshouldberandom"
 )
 
 func HandleFacebookLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(oauthConfFB)
-	u := oauthConfFB.AuthCodeURL(oauthStateStringFB)
+	u := oauthConfFB.AuthCodeURL(oauthStateString)
 	http.Redirect(w, r, u, http.StatusTemporaryRedirect)
 }
 
 func HandleFacebookCallback(w http.ResponseWriter, r *http.Request) {
 	state := r.FormValue("state")
-	if state != oauthStateStringFB {
-		fmt.Printf("invalid oauth state, expected %q got %q", oauthStateStringFB, state)
+	if state != oauthStateString {
+		fmt.Printf("invalid oauth state, expected %q got %q", oauthStateString, state)
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 		return
 	}
