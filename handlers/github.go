@@ -14,7 +14,7 @@ var (
 		RedirectURL:  "http://localhost:8080/github/callback",
 		ClientID:     "",
 		ClientSecret: "",
-		Scopes:       []string{"user:email"},
+		Scopes:       []string{"public_repo"},
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  "https://github.com/login/oauth/authorize",
 			TokenURL: "https://github.com/login/oauth/access_token",
@@ -44,7 +44,7 @@ func HandleGitCallback(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("this is the token %s\n", token.AccessToken)
 	var bearer = "Bearer " + token.AccessToken
-	req, err := http.NewRequest("GET", "https://api.github.com/user", nil)
+	req, err := http.NewRequest("GET", "https://api.github.com/user/repos", nil) // Change this for other informations such as user informations = /user
 	req.Header.Add("Authorization", bearer)
 	client := &http.Client{}
 	info, err := client.Do(req)
@@ -60,11 +60,13 @@ func HandleGitCallback(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 		return
 	}
-	var m map[string]interface{}
+	var m []map[string]interface{}
 	if err := json.Unmarshal(response, &m); err != nil {
 		fmt.Printf("error unmarshalling response: %s", err)
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 	}
-	fmt.Println("get user profile", m["login"])
+	for i, _ := range m {
+		fmt.Println(m[i]["html_url"])
+	}
 	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 }
