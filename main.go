@@ -9,6 +9,7 @@ import (
 const htmlIndex = `
 <a href="/facebook">Facebook Login</a>
 <a href="/github">Github Login</a>
+<a href="/linkedin">LinkedIn Login</a>
 `
 
 func handleMain(w http.ResponseWriter, r *http.Request) {
@@ -23,7 +24,8 @@ func main() {
 	http.HandleFunc("/facebook/callback", handlers.HandleFacebookCallback)
 	http.HandleFunc("/github", handlers.HandleGitLogin)
 	http.HandleFunc("/github/callback", handlers.HandleGitCallback)
-
+	http.HandleFunc("/linkedin", handlers.HandleLinkedLogin)
+	http.HandleFunc("/linkedin/callback", handlers.HandleLinkedinCallback)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }
