@@ -28,6 +28,7 @@ func HandleFacebookLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(oauthConfFB)
 	u := oauthConfFB.AuthCodeURL(oauthStateString)
 	http.Redirect(w, r, u, http.StatusTemporaryRedirect)
+
 }
 
 func HandleFacebookCallback(w http.ResponseWriter, r *http.Request) {

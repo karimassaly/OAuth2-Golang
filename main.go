@@ -10,6 +10,8 @@ const htmlIndex = `
 <a href="/facebook">Facebook Login</a>
 <a href="/github">Github Login</a>
 <a href="/linkedin">LinkedIn Login</a>
+<a href="/spotify">Spotify Login</a>
+
 `
 
 func handleMain(w http.ResponseWriter, r *http.Request) {
@@ -26,6 +28,9 @@ func main() {
 	http.HandleFunc("/github/callback", handlers.HandleGitCallback)
 	http.HandleFunc("/linkedin", handlers.HandleLinkedLogin)
 	http.HandleFunc("/linkedin/callback", handlers.HandleLinkedinCallback)
+	http.HandleFunc("/spotify", handlers.HandleSpotifyLogin)
+	http.HandleFunc("/spotify/callback", handlers.HandleSpotifyCallback)
+
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }

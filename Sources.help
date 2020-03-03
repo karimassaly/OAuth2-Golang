@@ -1,0 +1,26 @@
+Spotify Sources docs:
+
+- https://developer.spotify.com/documentation/web-api/reference/users-profile/get-current-users-profile/ # GET PROFILE URL
+- https://developer.spotify.com/documentation/general/guides/scopes/#user-read-private # GET SCOPES
+- https://developer.spotify.com/documentation/web-api/ # SHOT DOC
+- https://github.com/golang/oauth2/blob/master/spotify/spotify.go # ENDPOINTS
+- https://developer.spotify.com/dashboard/applications # APIs DASHBOARD 
+
+
+LinkedIn Sources docs:
+
+- https://developer.linkedin.com/docs/rest-api # SHOT DOC 
+- https://www.linkedin.com/developers/apps/ # APIs DASHBOARD
+- https://github.com/golang/oauth2/blob/master/linkedin/linkedin.go # ENDPOINTS
+
+Facebook Sources docs:
+
+- https://developers.facebook.com/tools/explorer/ # Graph API for scopes permissions
+- https://developers.facebook.com/apps/ # APIs DASHBOARD
+
+Github Sources docs:
+
+- https://github.com/settings/tokens # Scopes permissions
+- https://github.com/settings/developers # APIs DASHBOARD
+- https://developer.github.com/v3/repos/#list-your-repositories # REPOSITORIES LISTING DOC
+- https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/ # OAUTH2 INSTRUCTION DOC
