@@ -2,8 +2,9 @@ package main
 
 import (
 	"OAuth2/handlers"
-	"log"
 	"net/http"
+
+	"github.com/fatih/color"
 )
 
 const htmlIndex = `
@@ -11,7 +12,7 @@ const htmlIndex = `
 <a href="/github">Github Login</a>
 <a href="/linkedin">LinkedIn Login</a>
 <a href="/spotify">Spotify Login</a>
-
+<a href="/azure">Azure Login</a>
 `
 
 func handleMain(w http.ResponseWriter, r *http.Request) {
@@ -30,7 +31,11 @@ func main() {
 	http.HandleFunc("/linkedin/callback", handlers.HandleLinkedinCallback)
 	http.HandleFunc("/spotify", handlers.HandleSpotifyLogin)
 	http.HandleFunc("/spotify/callback", handlers.HandleSpotifyCallback)
+	http.HandleFunc("/azure", handlers.HandleAzureLogin)
+	http.HandleFunc("/azure/callback", handlers.HandleAzureCallback)
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	color.Cyan("Launching Oauth2 Server")
+	color.Magenta("Azure in testing")
+	http.ListenAndServe(":8080", nil)
 
 }

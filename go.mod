@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/davecgh/go-spew v1.1.1
+	github.com/fatih/color v1.9.0
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/go-github/v29 v29.0.3
 	github.com/gorilla/mux v1.7.4 // indirect

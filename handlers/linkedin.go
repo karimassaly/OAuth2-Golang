@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"golang.org/x/oauth2"
 	"github.com/davecgh/go-spew/spew"
+	"golang.org/x/oauth2"
 )
 
 var (
