@@ -24,3 +24,10 @@ Github Sources docs:
 - https://github.com/settings/developers # APIs DASHBOARD
 - https://developer.github.com/v3/repos/#list-your-repositories # REPOSITORIES LISTING DOC
 - https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/ # OAUTH2 INSTRUCTION DOC
+
+Microsoft Azure docs:
+
+- https://docs.microsoft.com/fr-fr/azure/active-directory/develop/quickstart-register-app # Register your Microsoft Azure application
+- https://docs.microsoft.com/fr-fr/azure/active-directory/develop/v2-oauth2-auth-code-flow#use-the-access-token # How to get the code and exchange it for the token
+- https://docs.microsoft.com/fr-fr/azure/active-directory/develop/v2-permissions-and-consent # Permissions and available scopes
+- https://developer.microsoft.com/en-us/graph/graph-explorer # Microsoft Graph Explorer to test Microsoft Azure API routes
